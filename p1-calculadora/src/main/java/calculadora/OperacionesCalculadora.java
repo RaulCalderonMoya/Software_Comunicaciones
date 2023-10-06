@@ -6,7 +6,7 @@ package calculadora;
  * nombre del método de CalculadoraGUI.ICalculadora. Por ejemplo: si se desea crear el método que implementa
  * la suma, su nombre en esta clase será 'implementacionSumar'.
  */
-public class OperacionesCalculadora {
+public class OperacionesCalculadora {//Version 2
 
 	// Escribir los métodos.
 	  private double memoria;
