@@ -1,0 +1,7 @@
+PREGUNTAS 1 y 2: ¿Qué ocurre cuando el segundo cliente intenta solicitar operaciones
+remotas? ¿Por qué ocurre eso?
+El segundo cliente se queda pillado al pulsar el botón de igual ya que está atendiendo a las peticiones del primer cliente. Una vez el primer cliente se libera, conseguimos que el servidor responda la petición de la segunda calculadora.
+
+PREGUNTAS 3 y 4: ¿Qué observa si en un cliente realiza una operación y en el otro
+solicita visualizar el último resultado? ¿Por qué ocurre eso?
+Si hacemos una operación en la primer cliente y luego solicitamos ver el último resultado en la segundo cliente sale el mismo resultado que en el primer cliente, esto pasa porque utilizan la misma variable de resultado, es decir la calculadora esta siendo compartida por ambos clientes, y el segundo cliente tiene acceso al ultimo valor resultado que se modifica concurrentemente. 
