@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="OperacionesCalculadoraService" targetNamespace="http://calculadora/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://calculadora/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://calculadora/" version="1.0" xmlns:tns="http://calculadora/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="getOperaciones" type="tns:getOperaciones"/>
+  <xs:element name="getOperacionesResponse" type="tns:getOperacionesResponse"/>
+  <xs:element name="implementacionMA" type="tns:implementacionMA"/>
+  <xs:element name="implementacionMAResponse" type="tns:implementacionMAResponse"/>
+  <xs:element name="implementacionML" type="tns:implementacionML"/>
+  <xs:element name="implementacionMLResponse" type="tns:implementacionMLResponse"/>
+  <xs:element name="implementacionMO" type="tns:implementacionMO"/>
+  <xs:element name="implementacionMOResponse" type="tns:implementacionMOResponse"/>
+  <xs:element name="implementacionUR" type="tns:implementacionUR"/>
+  <xs:element name="implementacionURResponse" type="tns:implementacionURResponse"/>
+  <xs:element name="implementarDividir" type="tns:implementarDividir"/>
+  <xs:element name="implementarDividirResponse" type="tns:implementarDividirResponse"/>
+  <xs:element name="implementarMultiplicar" type="tns:implementarMultiplicar"/>
+  <xs:element name="implementarMultiplicarResponse" type="tns:implementarMultiplicarResponse"/>
+  <xs:element name="implementarRestar" type="tns:implementarRestar"/>
+  <xs:element name="implementarRestarResponse" type="tns:implementarRestarResponse"/>
+  <xs:element name="implementarSumar" type="tns:implementarSumar"/>
+  <xs:element name="implementarSumarResponse" type="tns:implementarSumarResponse"/>
+  <xs:element name="operar" type="tns:operar"/>
+  <xs:element name="operarResponse" type="tns:operarResponse"/>
+  <xs:complexType name="implementarRestar">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+      <xs:element name="arg1" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="implementarRestarResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="implementarMultiplicar">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+      <xs:element name="arg1" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="implementarMultiplicarResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="operar">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="operarResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOperaciones">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOperacionesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="implementarDividir">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+      <xs:element name="arg1" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="implementarDividirResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="implementacionMA">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="implementacionMAResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="implementacionMO">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="implementacionMOResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="implementacionML">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="implementacionMLResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="implementarSumar">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+      <xs:element name="arg1" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="implementarSumarResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="implementacionUR">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="implementacionURResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Exception" type="tns:Exception"/>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="implementarRestar">
+    <wsdl:part name="parameters" element="tns:implementarRestar">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementarMultiplicar">
+    <wsdl:part name="parameters" element="tns:implementarMultiplicar">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="operar">
+    <wsdl:part name="parameters" element="tns:operar">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementacionMLResponse">
+    <wsdl:part name="parameters" element="tns:implementacionMLResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOperaciones">
+    <wsdl:part name="parameters" element="tns:getOperaciones">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementarDividir">
+    <wsdl:part name="parameters" element="tns:implementarDividir">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementarDividirResponse">
+    <wsdl:part name="parameters" element="tns:implementarDividirResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementacionMO">
+    <wsdl:part name="parameters" element="tns:implementacionMO">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementacionML">
+    <wsdl:part name="parameters" element="tns:implementacionML">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementarSumar">
+    <wsdl:part name="parameters" element="tns:implementarSumar">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementacionUR">
+    <wsdl:part name="parameters" element="tns:implementacionUR">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementacionMAResponse">
+    <wsdl:part name="parameters" element="tns:implementacionMAResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="operarResponse">
+    <wsdl:part name="parameters" element="tns:operarResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementacionMOResponse">
+    <wsdl:part name="parameters" element="tns:implementacionMOResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementarMultiplicarResponse">
+    <wsdl:part name="parameters" element="tns:implementarMultiplicarResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementarSumarResponse">
+    <wsdl:part name="parameters" element="tns:implementarSumarResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part name="Exception" element="tns:Exception">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementacionMA">
+    <wsdl:part name="parameters" element="tns:implementacionMA">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementacionURResponse">
+    <wsdl:part name="parameters" element="tns:implementacionURResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOperacionesResponse">
+    <wsdl:part name="parameters" element="tns:getOperacionesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="implementarRestarResponse">
+    <wsdl:part name="parameters" element="tns:implementarRestarResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="OperacionesCalculadora">
+    <wsdl:operation name="implementarRestar">
+      <wsdl:input name="implementarRestar" message="tns:implementarRestar">
+    </wsdl:input>
+      <wsdl:output name="implementarRestarResponse" message="tns:implementarRestarResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="implementarMultiplicar">
+      <wsdl:input name="implementarMultiplicar" message="tns:implementarMultiplicar">
+    </wsdl:input>
+      <wsdl:output name="implementarMultiplicarResponse" message="tns:implementarMultiplicarResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="operar">
+      <wsdl:input name="operar" message="tns:operar">
+    </wsdl:input>
+      <wsdl:output name="operarResponse" message="tns:operarResponse">
+    </wsdl:output>
+      <wsdl:fault name="Exception" message="tns:Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOperaciones">
+      <wsdl:input name="getOperaciones" message="tns:getOperaciones">
+    </wsdl:input>
+      <wsdl:output name="getOperacionesResponse" message="tns:getOperacionesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="implementarDividir">
+      <wsdl:input name="implementarDividir" message="tns:implementarDividir">
+    </wsdl:input>
+      <wsdl:output name="implementarDividirResponse" message="tns:implementarDividirResponse">
+    </wsdl:output>
+      <wsdl:fault name="Exception" message="tns:Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="implementacionMA">
+      <wsdl:input name="implementacionMA" message="tns:implementacionMA">
+    </wsdl:input>
+      <wsdl:output name="implementacionMAResponse" message="tns:implementacionMAResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="implementacionMO">
+      <wsdl:input name="implementacionMO" message="tns:implementacionMO">
+    </wsdl:input>
+      <wsdl:output name="implementacionMOResponse" message="tns:implementacionMOResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="implementacionML">
+      <wsdl:input name="implementacionML" message="tns:implementacionML">
+    </wsdl:input>
+      <wsdl:output name="implementacionMLResponse" message="tns:implementacionMLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="implementarSumar">
+      <wsdl:input name="implementarSumar" message="tns:implementarSumar">
+    </wsdl:input>
+      <wsdl:output name="implementarSumarResponse" message="tns:implementarSumarResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="implementacionUR">
+      <wsdl:input name="implementacionUR" message="tns:implementacionUR">
+    </wsdl:input>
+      <wsdl:output name="implementacionURResponse" message="tns:implementacionURResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OperacionesCalculadoraServiceSoapBinding" type="tns:OperacionesCalculadora">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="implementarRestar">
+      <soap:operation soapAction="urn:ImplementarRestar" style="document"/>
+      <wsdl:input name="implementarRestar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="implementarRestarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="implementarMultiplicar">
+      <soap:operation soapAction="urn:ImplementarMultiplicar" style="document"/>
+      <wsdl:input name="implementarMultiplicar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="implementarMultiplicarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="operar">
+      <soap:operation soapAction="urn:Operar" style="document"/>
+      <wsdl:input name="operar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="operarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOperaciones">
+      <soap:operation soapAction="urn:GetOperaciones" style="document"/>
+      <wsdl:input name="getOperaciones">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOperacionesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="implementarDividir">
+      <soap:operation soapAction="urn:ImplementarDividir" style="document"/>
+      <wsdl:input name="implementarDividir">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="implementarDividirResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="implementacionMA">
+      <soap:operation soapAction="urn:ImplementacionMA" style="document"/>
+      <wsdl:input name="implementacionMA">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="implementacionMAResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="implementacionMO">
+      <soap:operation soapAction="urn:ImplementacionMO" style="document"/>
+      <wsdl:input name="implementacionMO">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="implementacionMOResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="implementacionML">
+      <soap:operation soapAction="urn:ImplementacionML" style="document"/>
+      <wsdl:input name="implementacionML">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="implementacionMLResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="implementarSumar">
+      <soap:operation soapAction="urn:ImplementarSumar" style="document"/>
+      <wsdl:input name="implementarSumar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="implementarSumarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="implementacionUR">
+      <soap:operation soapAction="urn:ImplementacionUR" style="document"/>
+      <wsdl:input name="implementacionUR">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="implementacionURResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OperacionesCalculadoraService">
+    <wsdl:port name="OperacionesCalculadoraPort" binding="tns:OperacionesCalculadoraServiceSoapBinding">
+      <soap:address location="http://localhost:8080/p3-servidor/services/OperacionesCalculadoraPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
